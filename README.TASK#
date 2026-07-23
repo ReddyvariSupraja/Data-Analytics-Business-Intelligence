@@ -1,0 +1,27 @@
+# Sales & Profit Performance Dashboard
+
+A comprehensive Business Intelligence portfolio project analyzing transactional orders and customer data to evaluate revenue streams, regional profitability, and product category performance.
+
+## 📊 Project Overview
+This project transforms raw data into an interactive, decision-support dashboard using **Power BI Desktop**, **SQL**, and **Excel**. It demonstrates end-to-end data modeling, relationship mapping, custom metric calculation via **DAX**, and modern dashboard design principles.
+
+### Key Visualizations & Features
+* **Executive KPI Cards:** High-level summaries tracking **Total Revenue**, **Total Profit**, and overall **Profit Margin**.
+* **Global Date Slicer:** Dynamic filtering allowing users to instantly slice the entire dashboard by specific years (2025, 2026).
+* **Revenue Trend Analysis:** A smoothed line chart tracking monthly revenue growth trajectories over time.
+* **Regional Profitability Breakdown:** A clustered bar chart identifying top-performing and underperforming geographic territories.
+* **Customer Segmentation:** A donut chart analyzing sales distribution across consumer types.
+* **Granular Category Matrix:** A detailed table breaking down Sales, Profit, and Profit Margins across product categories (Furniture, Office Supplies, Technology).
+
+---
+
+## 🛠️ Technical Implementation
+
+### 1. Data Modeling & Relationships
+* **Datasets Used:** `Task3Customers.xlsx` and `Task3Orders.xlsx`.
+* **Relational Schema:** Established a one-to-many relationship linking `Customer_ID` from the Customer table to the Orders table to enable cross-table filtering.
+
+### 2. Custom DAX Measures
+To extract deeper analytical insights, custom Data Analysis Expressions (DAX) were implemented, including the profit margin calculation:
+```dax
+Profit Margin = DIVIDE(SUM(Orders[Profit]), SUM(Orders[Sales]), 0)
